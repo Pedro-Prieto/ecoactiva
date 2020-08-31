@@ -14,6 +14,7 @@ var wms_layers = [];
                 url: 'http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
             })
         });
+        
 
     var projection_Base_1 = ol.proj.get('EPSG:3857');
     var projectionExtent_Base_1 = projection_Base_1.getExtent();
@@ -25,6 +26,9 @@ var wms_layers = [];
         resolutions_Base_1[z] = size_Base_1 / Math.pow(2, z);
         matrixIds_Base_1[z] = z;
     }
+
+
+    
     var lyr_Base_1 = new ol.layer.Tile({
                             source: new ol.source.WMTS(({
                               url: "https://api.mapbox.com/styles/v1/pprieto/ckdr8sgpv0qm519n0rmr2csuq/wmts?access_token=pk.eyJ1IjoicHByaWV0byIsImEiOiJja2RxNTVpYXkyOHV4MnJvZnJrMTQ0dW9lIn0.TBhCyxgV9qJFaSGcPVZ6hQ",

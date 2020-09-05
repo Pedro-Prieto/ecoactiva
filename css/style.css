@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
  .mapbox-logo{ display: none; } .mapboxgl-ctrl-logo { display: none !important; } .mapbox-improve-map { display: none; } .mapboxgl-ctrl-compass { display: none; }
- .mapboxgl-ctrl-attrib { display: none; }
+ .mapboxgl-ctrl-attrib { display: none; } /* atribucion de mapbox */
 
 :root {
   --blue: #007bff;

@@ -423,20 +423,7 @@ stores.features.forEach(function(marker, i) {
 });
 
 
-  // Add geolocate control to the map.
-  const geolocate = new mapboxgl.GeolocateControl({
-    positionOptions: {
-      enableHighAccuracy: true,
-    },
-    trackUserLocation: true,
-  });
-  
-  ////map.addControl(geolocate);
-  // Set an event listener that fires
-  // when a geolocate event occurs.
-  geolocate.on('geolocate', function (ev) {
-    console.log(ev.coords); // you'll get the coordinates
-  });
+
 
 function flyToStore(currentFeature) {
   map.flyTo({
@@ -507,3 +494,4 @@ function buildLocationList(data) {
     });
   }
 }
+

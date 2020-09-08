@@ -172,13 +172,13 @@ a:hover {
   cursor: pointer;
   height: 56px;
   width: 56px;
-  background-image: url(marker.png);
+  background-image: url(loc.png);
   background-color: rgba(0, 0, 0, 0);
   transform: translate(28px, 56px, 0);
 }
 
-.marker:hover { /*pseudoclase y pseudo elementos*/ 
-  border: none;
+/*.marker:hover { /*pseudoclase y pseudo elementos*/ 
+/*  border: none;
   cursor: pointer;
   height: 56px;
   width: 56px;
@@ -186,7 +186,7 @@ a:hover {
   background-color: rgba(0, 0, 0, 0);
   transform: translate(28px, 56px, 0);
   background-repeat: repeat-y;
-}
+}*/
 
 .mapbox-logo{ display: none; } .mapboxgl-ctrl-logo { display: none !important; } .mapbox-improve-map { display: none; } .mapboxgl-ctrl-compass { display: none; }
 .mapboxgl-ctrl-attrib { display: none; }

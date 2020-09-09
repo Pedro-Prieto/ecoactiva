@@ -432,7 +432,7 @@ map.on('load', () => {
     extruded: true,
     getPosition: d => [Number(d.lng), Number(d.lat)],
     lightSettings: LIGHT_SETTINGS,
-    opacity: 0.17
+    opacity: 0.05
   });
 
   map.addLayer(hexagonLayer, 'waterway-label');

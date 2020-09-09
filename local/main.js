@@ -400,8 +400,10 @@ map.on('load', function (e) {
 const DATA_URL = 'https://raw.githubusercontent.com/Pedro-Prieto/ecoactiva/master/local/puntos.csv'; //
 const OPTIONS = ['radius', 'coverage', 'upperPercentile'];
 const COLOR_RANGE = [
+
   [1, 152, 189], //azul claro - ok
-  [73, 227, 206],
+  //[255, 255, 255], //nuevo
+  [73, 227, 206], // turquesa
   [216, 254, 181],
   [254, 237, 177],
   [254, 173, 84],

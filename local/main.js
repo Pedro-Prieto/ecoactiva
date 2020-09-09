@@ -16,8 +16,8 @@ var map = new mapboxgl.Map({
   // style URL
   style: 'mapbox://styles/pprieto/ckdr8sgpv0qm519n0rmr2csuq',
   // initial position in [long, lat] format and zoom
-//  center: [-78.84, -2.74],
-  center: [-1.4157, 52.2324],
+  center: [-78.84, -2.74],
+//  center: [-1.4157, 52.2324],
 
   zoom: 9
 });
@@ -396,8 +396,8 @@ map.on('load', function (e) {
 
 });
 
-/*deck*/
-const DATA_URL = 'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv';
+/*deck* /*'/https://github.com/Pedro-Prieto/ecoactiva/blob/master/local/puntos.csv'*/
+const DATA_URL = 'https://raw.githubusercontent.com/Pedro-Prieto/ecoactiva/master/local/puntos.csv'; //
 const OPTIONS = ['radius', 'coverage', 'upperPercentile'];
 const COLOR_RANGE = [
   [1, 152, 189],
@@ -423,16 +423,16 @@ map.on('load', () => {
     type: HexagonLayer,
     id: 'heatmap',
     data: d3.csv(DATA_URL),
-    radius: 1000,
+    radius: 300,
     coverage: 1,
     upperPercentile: 100,
     colorRange: COLOR_RANGE,
-    elevationRange: [0, 1000],
-    elevationScale: 250,
+    elevationRange: [5, 25],
+    elevationScale: 80,
     extruded: true,
     getPosition: d => [Number(d.lng), Number(d.lat)],
     lightSettings: LIGHT_SETTINGS,
-    opacity: 1
+    opacity: 0.17
   });
 
   map.addLayer(hexagonLayer, 'waterway-label');

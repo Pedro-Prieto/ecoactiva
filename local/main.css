@@ -193,3 +193,7 @@ a:hover {
 
 .mapbox-logo{ display: none; } .mapboxgl-ctrl-logo { display: none !important; } .mapbox-improve-map { display: none; } .mapboxgl-ctrl-compass { display: none; }
 .mapboxgl-ctrl-attrib { display: none; }
+
+body { font-family: Helvetica, Arial, sans-serif; width: 100vw; height: 100vh; margin: 0; }
+#control-panel { position: absolute; background: #fff; top: 0; right: 0; margin: 12px; padding: 20px; font-size: 12px; line-height: 1.5; z-index: 1; }
+label { display: inline-block; width: 140px; }

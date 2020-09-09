@@ -16,9 +16,16 @@ var map = new mapboxgl.Map({
   // style URL
   style: 'mapbox://styles/pprieto/ckdr8sgpv0qm519n0rmr2csuq',
   // initial position in [long, lat] format and zoom
-  center: [-78.84, -2.74],
+//  center: [-78.84, -2.74],
+  center: [-1.4157, 52.2324],
+
   zoom: 9
 });
+/*deck*/
+
+const {MapboxLayer, HexagonLayer} = deck;
+
+
 
 var stores = {
   "type": "FeatureCollection",
@@ -42,6 +49,50 @@ var stores = {
       "provincia": "Cañar"
     }
    },
+
+   { "type": "Feature", "properties": { "nombre": "Guillermo Dominguez Tapia", "tipo": "TEATRO" }, "geometry": { "type": "Point", "coordinates":  [ -78.8467955, -2.7387084 ] } },
+   { "type": "Feature", "properties": { "nombre": "Hotel Rivera", "tipo": "HOTEL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8489858, -2.7407739 ] } },
+   { "type": "Feature", "properties": { "nombre": "Hotel León", "tipo": "HOTEL" }, "geometry": { "type": "Point", "coordinates":  [ -78.850968, -2.7470604 ] } },
+   { "type": "Feature", "properties": { "nombre": "Estación No.1 \"911\"", "tipo": "911" }, "geometry": { "type": "Point", "coordinates":  [ -78.8471592, -2.7517802 ] } },
+   { "type": "Feature", "properties": { "nombre": "Farmacia Suiza 2", "tipo": "FARMACIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8472608, -2.7355703 ] } },
+   { "type": "Feature", "properties": { "nombre": "Terminal Terrestre", "tipo": "S. TRANSITO bus_stop" }, "geometry": { "type": "Point", "coordinates":  [ -78.8477153, -2.7512153 ] } },
+   { "type": "Feature", "properties": { "nombre": "Taxis", "tipo": "TAXI" }, "geometry": { "type": "Point", "coordinates":  [ -78.8475635, -2.7513047 ] } },
+   { "type": "Feature", "properties": { "nombre": "Ccbs", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8473193, -2.7395924 ] } },
+   { "type": "Feature", "properties": { "nombre": "Aki", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8465619, -2.7488702 ] } },
+   { "type": "Feature", "properties": { "nombre": "Casa de la Cultura", "tipo": "TEATRO" }, "geometry": { "type": "Point", "coordinates":  [ -78.8466523, -2.7431031 ] } },
+   { "type": "Feature", "properties": { "nombre": "Estación Central", "tipo": "ESTACION CENTRAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8467237, -2.7351605 ] } },
+   { "type": "Feature", "properties": { "nombre": "Macas", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.8566737, -2.7309234 ] } },
+   { "type": "Feature", "properties": { "nombre": "Subcentro de salud uchupucun", "tipo": "OTROS amenity\"=>\"police\"" }, "geometry": { "type": "Point", "coordinates":  [ -78.8412886, -2.7269745 ] } },
+   { "type": "Feature", "properties": { "nombre": "Iglesia Católica Sagrado Corazón de Jesús", "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8418295, -2.7292918 ] } },
+   { "type": "Feature", "properties": { "nombre": "Primax", "tipo": "GASOLINERA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8508918, -2.7473835 ] } },
+   { "type": "Feature", "properties": { "nombre": "Parque del Migrante", "tipo": "PARQUE" }, "geometry": { "type": "Point", "coordinates":  [ -78.8489005, -2.7491982 ] } },
+   { "type": "Feature", "properties": { "nombre": "Carwash Coronel", "tipo": "CAR WASH" }, "geometry": { "type": "Point", "coordinates":  [ -78.8457838, -2.7563668 ] } },
+   { "type": "Feature", "properties": { "nombre": null, "tipo": "OTROS amenity\"=>\"post_box\",\"operator\"=>\"Correos de" }, "geometry": { "type": "Point", "coordinates":  [ -78.8464078, -2.7382113 ] } },
+   { "type": "Feature", "properties": { "nombre": "Farmacia Suiza 1", "tipo": "FARMACIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8478366, -2.7368611 ] } },
+   { "type": "Feature", "properties": { "nombre": "Emergencia", "tipo": "S. TRANSITO emergency_access_point" }, "geometry": { "type": "Point", "coordinates":  [ -78.8508313, -2.7377176 ] } },
+   { "type": "Feature", "properties": { "nombre": "Parque Infantil Marco Romero Heredia", "tipo": "PARQUE" }, "geometry": { "type": "Point", "coordinates":  [ -78.8510599, -2.7357502 ] } },
+   { "type": "Feature", "properties": { "nombre": "Centro de Rehabilitación Social", "tipo": "CARCEL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8539973, -2.735941 ] } },
+   { "type": "Feature", "properties": { "nombre": "Mercado San Francisco", "tipo": "MERCADO" }, "geometry": { "type": "Point", "coordinates":  [ -78.844097, -2.7414609 ] } },
+   { "type": "Feature", "properties": { "nombre": "Huangra", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6108866, -2.470941 ] } },
+   { "type": "Feature", "properties": { "nombre": "Zhall", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6330839, -2.6185765 ] } },
+   { "type": "Feature", "properties": { "nombre": null, "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.681297, -2.5322346 ] } },
+   { "type": "Feature", "properties": { "nombre": "Cerro Suyala", "tipo": "CERRO" }, "geometry": { "type": "Point", "coordinates":  [ -78.7066901, -2.5620287 ] } },
+   { "type": "Feature", "properties": { "nombre": "Biolán", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6553732, -2.6398925 ] } },
+   { "type": "Feature", "properties": { "nombre": "Ms Prieto", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8457684, -2.738921 ] } },
+   { "type": "Feature", "properties": { "nombre": "Subestación de Tabacay", "tipo": "POSTE DE LUZ U SIMILAR" }, "geometry": { "type": "Point", "coordinates":  [ -78.8470214, -2.7217168 ] } },
+   { "type": "Feature", "properties": { "nombre": "Tienda Artesanal Makiruray", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.846255, -2.7398197 ] } },
+   { "type": "Feature", "properties": { "nombre": "Colegio LENIN AVILA", "tipo": "ESCUELA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8329702, -2.7323302 ] } },
+   { "type": "Feature", "properties": { "nombre": "Automotriz TORRES", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8447498, -2.7476313 ] } },
+   { "type": "Feature", "properties": { "nombre": "Automotriz JR", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8464884, -2.749721 ] } },
+   { "type": "Feature", "properties": { "nombre": "Terminal Terrestre", "tipo": "ESTACION DE BUS" }, "geometry": { "type": "Point", "coordinates":  [ -78.8475113, -2.7509367 ] } },
+   { "type": "Feature", "properties": { "nombre": "Esc. QUITO", "tipo": "ESCUELA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8319827, -2.7313667 ] } },
+   { "type": "Feature", "properties": { "nombre": "Iglesia Católica Inmaculado Corazón de María de Ba", "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8326659, -2.7303962 ] } },
+   { "type": "Feature", "properties": { "nombre": "Central El Descanso", "tipo": "POSTE DE LUZ U SIMILAR" }, "geometry": { "type": "Point", "coordinates":  [ -78.8756086, -2.8382415 ] } },
+   { "type": "Feature", "properties": { "nombre": "Centro Comercial Gisselle", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8478917, -2.7415282 ] } },
+   { "type": "Feature", "properties": { "nombre": "T Movil", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8483959, -2.7391598 ] } },
+   { "type": "Feature", "properties": { "nombre": "UTPL", "tipo": "ESCUELA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8458888, -2.7372296 ] } },
+   { "type": "Feature", "properties": { "nombre": "FERRETERIA  MATELCO", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8483557, -2.743897 ] } },
+
 
    { "type": "Feature", "properties": { "nombre": "Río Guarango", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates": [-78.85, -2.8011667] } }, // tipo 2
 
@@ -108,48 +159,6 @@ var stores = {
     { "type": "Feature", "properties": { "nombre": "Zhudum", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6710519, -2.5737587 ] } },
     { "type": "Feature", "properties": { "nombre": "Sumbahuaico", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.9017094, -2.831086 ] } },
     { "type": "Feature", "properties": { "nombre": "San Francisco", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.65343, -2.5629612 ] } },
-    { "type": "Feature", "properties": { "nombre": "Guillermo Dominguez Tapia", "tipo": "TEATRO" }, "geometry": { "type": "Point", "coordinates":  [ -78.8467955, -2.7387084 ] } },
-    { "type": "Feature", "properties": { "nombre": "Hotel Rivera", "tipo": "HOTEL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8489858, -2.7407739 ] } },
-    { "type": "Feature", "properties": { "nombre": "Hotel León", "tipo": "HOTEL" }, "geometry": { "type": "Point", "coordinates":  [ -78.850968, -2.7470604 ] } },
-    { "type": "Feature", "properties": { "nombre": "Estación No.1 \"911\"", "tipo": "911" }, "geometry": { "type": "Point", "coordinates":  [ -78.8471592, -2.7517802 ] } },
-    { "type": "Feature", "properties": { "nombre": "Farmacia Suiza 2", "tipo": "FARMACIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8472608, -2.7355703 ] } },
-    { "type": "Feature", "properties": { "nombre": "Terminal Terrestre", "tipo": "S. TRANSITO bus_stop" }, "geometry": { "type": "Point", "coordinates":  [ -78.8477153, -2.7512153 ] } },
-    { "type": "Feature", "properties": { "nombre": "Taxis", "tipo": "TAXI" }, "geometry": { "type": "Point", "coordinates":  [ -78.8475635, -2.7513047 ] } },
-    { "type": "Feature", "properties": { "nombre": "Ccbs", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8473193, -2.7395924 ] } },
-    { "type": "Feature", "properties": { "nombre": "Aki", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8465619, -2.7488702 ] } },
-    { "type": "Feature", "properties": { "nombre": "Casa de la Cultura", "tipo": "TEATRO" }, "geometry": { "type": "Point", "coordinates":  [ -78.8466523, -2.7431031 ] } },
-    { "type": "Feature", "properties": { "nombre": "Estación Central", "tipo": "ESTACION CENTRAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8467237, -2.7351605 ] } },
-    { "type": "Feature", "properties": { "nombre": "Macas", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.8566737, -2.7309234 ] } },
-    { "type": "Feature", "properties": { "nombre": "Subcentro de salud uchupucun", "tipo": "OTROS amenity\"=>\"police\"" }, "geometry": { "type": "Point", "coordinates":  [ -78.8412886, -2.7269745 ] } },
-    { "type": "Feature", "properties": { "nombre": "Iglesia Católica Sagrado Corazón de Jesús", "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8418295, -2.7292918 ] } },
-    { "type": "Feature", "properties": { "nombre": "Primax", "tipo": "GASOLINERA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8508918, -2.7473835 ] } },
-    { "type": "Feature", "properties": { "nombre": "Parque del Migrante", "tipo": "PARQUE" }, "geometry": { "type": "Point", "coordinates":  [ -78.8489005, -2.7491982 ] } },
-    { "type": "Feature", "properties": { "nombre": "Carwash Coronel", "tipo": "CAR WASH" }, "geometry": { "type": "Point", "coordinates":  [ -78.8457838, -2.7563668 ] } },
-    { "type": "Feature", "properties": { "nombre": null, "tipo": "OTROS amenity\"=>\"post_box\",\"operator\"=>\"Correos de" }, "geometry": { "type": "Point", "coordinates":  [ -78.8464078, -2.7382113 ] } },
-    { "type": "Feature", "properties": { "nombre": "Farmacia Suiza 1", "tipo": "FARMACIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8478366, -2.7368611 ] } },
-    { "type": "Feature", "properties": { "nombre": "Emergencia", "tipo": "S. TRANSITO emergency_access_point" }, "geometry": { "type": "Point", "coordinates":  [ -78.8508313, -2.7377176 ] } },
-    { "type": "Feature", "properties": { "nombre": "Parque Infantil Marco Romero Heredia", "tipo": "PARQUE" }, "geometry": { "type": "Point", "coordinates":  [ -78.8510599, -2.7357502 ] } },
-    { "type": "Feature", "properties": { "nombre": "Centro de Rehabilitación Social", "tipo": "CARCEL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8539973, -2.735941 ] } },
-    { "type": "Feature", "properties": { "nombre": "Mercado San Francisco", "tipo": "MERCADO" }, "geometry": { "type": "Point", "coordinates":  [ -78.844097, -2.7414609 ] } },
-    { "type": "Feature", "properties": { "nombre": "Huangra", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6108866, -2.470941 ] } },
-    { "type": "Feature", "properties": { "nombre": "Zhall", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6330839, -2.6185765 ] } },
-    { "type": "Feature", "properties": { "nombre": null, "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.681297, -2.5322346 ] } },
-    { "type": "Feature", "properties": { "nombre": "Cerro Suyala", "tipo": "CERRO" }, "geometry": { "type": "Point", "coordinates":  [ -78.7066901, -2.5620287 ] } },
-    { "type": "Feature", "properties": { "nombre": "Biolán", "tipo": "Ref" }, "geometry": { "type": "Point", "coordinates":  [ -78.6553732, -2.6398925 ] } },
-    { "type": "Feature", "properties": { "nombre": "Ms Prieto", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8457684, -2.738921 ] } },
-    { "type": "Feature", "properties": { "nombre": "Subestación de Tabacay", "tipo": "POSTE DE LUZ U SIMILAR" }, "geometry": { "type": "Point", "coordinates":  [ -78.8470214, -2.7217168 ] } },
-    { "type": "Feature", "properties": { "nombre": "Tienda Artesanal Makiruray", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.846255, -2.7398197 ] } },
-    { "type": "Feature", "properties": { "nombre": "Colegio LENIN AVILA", "tipo": "ESCUELA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8329702, -2.7323302 ] } },
-    { "type": "Feature", "properties": { "nombre": "Automotriz TORRES", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8447498, -2.7476313 ] } },
-    { "type": "Feature", "properties": { "nombre": "Automotriz JR", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8464884, -2.749721 ] } },
-    { "type": "Feature", "properties": { "nombre": "Terminal Terrestre", "tipo": "ESTACION DE BUS" }, "geometry": { "type": "Point", "coordinates":  [ -78.8475113, -2.7509367 ] } },
-    { "type": "Feature", "properties": { "nombre": "Esc. QUITO", "tipo": "ESCUELA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8319827, -2.7313667 ] } },
-    { "type": "Feature", "properties": { "nombre": "Iglesia Católica Inmaculado Corazón de María de Ba", "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8326659, -2.7303962 ] } },
-    { "type": "Feature", "properties": { "nombre": "Central El Descanso", "tipo": "POSTE DE LUZ U SIMILAR" }, "geometry": { "type": "Point", "coordinates":  [ -78.8756086, -2.8382415 ] } },
-    { "type": "Feature", "properties": { "nombre": "Centro Comercial Gisselle", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8478917, -2.7415282 ] } },
-    { "type": "Feature", "properties": { "nombre": "T Movil", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8483959, -2.7391598 ] } },
-    { "type": "Feature", "properties": { "nombre": "UTPL", "tipo": "ESCUELA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8458888, -2.7372296 ] } },
-    { "type": "Feature", "properties": { "nombre": "FERRETERIA  MATELCO", "tipo": "COMERCIAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8483557, -2.743897 ] } },
     { "type": "Feature", "properties": { "nombre": null, "tipo": "S. TRANSITO turning_circle" }, "geometry": { "type": "Point", "coordinates":  [ -78.8473639, -2.7288366 ] } },
     { "type": "Feature", "properties": { "nombre": null, "tipo": "S. TRANSITO turning_circle" }, "geometry": { "type": "Point", "coordinates":  [ -78.8492153, -2.7303458 ] } },
     { "type": "Feature", "properties": { "nombre": null, "tipo": "S. TRANSITO crossing" }, "geometry": { "type": "Point", "coordinates":  [ -78.8582631, -2.7304956 ] } },
@@ -387,6 +396,61 @@ map.on('load', function (e) {
 
 });
 
+/*deck*/
+const DATA_URL = 'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv';
+const OPTIONS = ['radius', 'coverage', 'upperPercentile'];
+const COLOR_RANGE = [
+  [1, 152, 189],
+  [73, 227, 206],
+  [216, 254, 181],
+  [254, 237, 177],
+  [254, 173, 84],
+  [209, 55, 78]
+];
+const LIGHT_SETTINGS = {
+  lightsPosition: [-0.144528, 49.739968, 8000, -3.807751, 54.104682, 8000],
+  ambientRatio: 0.4,
+  diffuseRatio: 0.6,
+  specularRatio: 0.2,
+  lightsStrength: [0.8, 0.0, 0.8, 0.0],
+  numberOfLights: 2
+};
+
+let hexagonLayer;
+
+map.on('load', () => {
+  hexagonLayer = new MapboxLayer({
+    type: HexagonLayer,
+    id: 'heatmap',
+    data: d3.csv(DATA_URL),
+    radius: 1000,
+    coverage: 1,
+    upperPercentile: 100,
+    colorRange: COLOR_RANGE,
+    elevationRange: [0, 1000],
+    elevationScale: 250,
+    extruded: true,
+    getPosition: d => [Number(d.lng), Number(d.lat)],
+    lightSettings: LIGHT_SETTINGS,
+    opacity: 1
+  });
+
+  map.addLayer(hexagonLayer, 'waterway-label');
+});
+
+OPTIONS.forEach(key => {
+  document.getElementById(key).oninput = (evt) => {
+    const value = Number(evt.target.value);
+    document.getElementById(key + '-value').innerHTML = value;
+    if (hexagonLayer) {
+      hexagonLayer.setProps({[key]: value});
+    }
+  };
+});
+
+
+
+/*fin deck */
 // This is where your interactions with the symbol layer used to be
 // Now you have interactions with DOM markers instead
 stores.features.forEach(function(marker, i) {
@@ -428,7 +492,9 @@ stores.features.forEach(function(marker, i) {
 function flyToStore(currentFeature) {
   map.flyTo({
       center: currentFeature.geometry.coordinates,
-      zoom: 15
+      zoom: 17,
+      pitch: 45,
+      bearing: -15
     });
 }
 
@@ -488,10 +554,8 @@ function buildLocationList(data) {
       }
       this.parentNode.classList.add('active');
 
-
-
-
     });
   }
 }
 
+/*deck*/

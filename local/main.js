@@ -425,7 +425,7 @@ map.on('load', () => {
     type: HexagonLayer,
     id: 'heatmap',
     data: d3.csv(DATA_URL),
-    radius: 850,
+    radius: 850, //radio optimo anterior 850
     coverage: 1,
     upperPercentile: 100,
     colorRange: COLOR_RANGE,

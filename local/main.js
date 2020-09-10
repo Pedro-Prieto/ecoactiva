@@ -411,8 +411,8 @@ const COLOR_RANGE = [
 ];
 const LIGHT_SETTINGS = {
   lightsPosition: [-0.144528, 49.739968, 8000, -3.807751, 54.104682, 8000],
-  ambientRatio: 0.4,
-  diffuseRatio: 0.6,
+  ambientRatio: 0.6,
+  diffuseRatio: 1,
   specularRatio: 0.2,
   lightsStrength: [0.8, 0.0, 0.8, 0.0],
   numberOfLights: 2
@@ -425,16 +425,16 @@ map.on('load', () => {
     type: HexagonLayer,
     id: 'heatmap',
     data: d3.csv(DATA_URL),
-    radius: 850, //radio optimo anterior 850
+    radius: 150, //radio optimo anterior 850
     coverage: 1,
     upperPercentile: 100,
     colorRange: COLOR_RANGE,
-    elevationRange: [1, 25],
+    elevationRange: [1, 100],
     elevationScale: 100,
     extruded: true,
     getPosition: d => [Number(d.lng), Number(d.lat)],
     lightSettings: LIGHT_SETTINGS,
-    opacity: 0.05
+    opacity: 0.1
   });
 
   map.addLayer(hexagonLayer, 'waterway-label');

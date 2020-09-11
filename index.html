@@ -15,29 +15,34 @@
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <!--bootstrap-->
-    <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css></script>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
     <!--fin deck-->
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">guiacomercio.info</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
-          </ul>
-	      </div>
-	    </div>
-	  </nav>
-
+    
     <div class='sidebar'>
-      <div class='heading'>
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <!--a class="navbar-brand" href="index.html">guiacomercio.info</a-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="index.html" class="nav-link">Guia</a></li>
+          </ul>
+        </div>
+    </nav>
+      <!--div class='heading'>
         <h1>Directorio</h1>
-      </div>
+
+      </div-->
       <div id='listings' class='listings'>
       </div>
     </div>
@@ -46,6 +51,16 @@
 
     </div>
   <script src="./main.js"></script>
+
+<!--inicio codigo control adicional-->
+    <div id="control-panel">
+    <div>
+      <label>Barras</label>
+      <input id="barras" type="button"></input>
+    </div>
+  </div>
+<!--fin-->
+
   <!--div id="control-panel">
     <div>
       <label>Radius</label>
@@ -63,6 +78,7 @@
       <span id="upperPercentile-value"></span>
     </div>
   </div-->
+
 
   </body>
 </html>

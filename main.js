@@ -397,7 +397,7 @@ map.on('load', function (e) {
 });
 
 /*deck* /*'/https://github.com/Pedro-Prieto/ecoactiva/blob/master/local/puntos.csv'*/
-const DATA_URL = 'https://raw.githubusercontent.com/Pedro-Prieto/ecoactiva/master/local/puntos.csv'; //
+const DATA_URL = 'https://raw.githubusercontent.com/Pedro-Prieto/ecoactiva/master/puntos.csv'; //
 const OPTIONS = ['radius', 'coverage', 'upperPercentile'];
 const COLOR_RANGE = [
 

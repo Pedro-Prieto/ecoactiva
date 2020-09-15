@@ -1,66 +1,4 @@
-// This will let you use the .remove() function later on
-if (!('remove' in Element.prototype)) {
-  Element.prototype.remove = function() {
-    if (this.parentNode) {
-      this.parentNode.removeChild(this);
-    }
-  };
-}
-
-mapboxgl.accessToken = 'pk.eyJ1IjoicHByaWV0byIsImEiOiJja2RxNTVpYXkyOHV4MnJvZnJrMTQ0dW9lIn0.TBhCyxgV9qJFaSGcPVZ6hQ';
-
-// This adds the map
-var map = new mapboxgl.Map({
-  // container id specified in the HTML
-  container: 'map',
-  // style URL
-  style: 'mapbox://styles/pprieto/ckdr8sgpv0qm519n0rmr2csuq',
-  // initial position in [long, lat] format and zoom
-  center: [-78.84, -2.74],
-//  center: [-1.4157, 52.2324],
-
-  zoom: 9
-});
-
-// Add geolocate control to the map.
-map.addControl(
-  new mapboxgl.GeolocateControl({
-  positionOptions: {
-  enableHighAccuracy: true
-  },
-  trackUserLocation: true
-  })
-  );
-
-
-/*geocoder*/
-var geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  placeholder: 'Busqueda general',
-  flyTo: {
-  bearing: 0,
-  // These options control the flight curve, making it move
-  // slowly and zoom out almost completely before starting
-  // to pan.
-  speed: 0.2, // make the flying slow
-  curve: 1, // change the speed at which it zooms out
-  // This can be any easing function: it takes a number between
-  // 0 and 1 and returns another number between 0 and 1.
-  easing: function (t) {
-  return t;
-  }
-  },
-  mapboxgl: mapboxgl
-  });
-  //map.addControl(geocoder);
-
-  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-/*deck*/
-
-const {MapboxLayer, HexagonLayer} = deck;
-
-
-
+//inicio datos
 var stores = {
   "type": "FeatureCollection",
   "features": [
@@ -418,6 +356,116 @@ var stores = {
     }*/
   ]
   };
+//fin datos
+
+
+
+// This will let you use the .remove() function later on
+if (!('remove' in Element.prototype)) {
+  Element.prototype.remove = function() {
+    if (this.parentNode) {
+      this.parentNode.removeChild(this);
+    }
+  };
+}
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicHByaWV0byIsImEiOiJja2RxNTVpYXkyOHV4MnJvZnJrMTQ0dW9lIn0.TBhCyxgV9qJFaSGcPVZ6hQ';
+
+// This adds the map
+var map = new mapboxgl.Map({
+  // container id specified in the HTML
+  container: 'map',
+  // style URL
+  style: 'mapbox://styles/pprieto/ckdr8sgpv0qm519n0rmr2csuq',
+  // initial position in [long, lat] format and zoom
+  center: [-78.84, -2.74],
+//  center: [-1.4157, 52.2324],
+
+  zoom: 9
+});
+
+//inicio animacion
+
+
+
+//fin animación
+
+
+//pantalla completa
+map.addControl(new mapboxgl.FullscreenControl());
+
+// Add geolocate control to the map.
+map.addControl(
+  new mapboxgl.GeolocateControl({
+  positionOptions: {
+  enableHighAccuracy: true
+  },
+  trackUserLocation: true
+  })
+  );
+
+
+/*geocoder*/
+var geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  placeholder: 'Busqueda general',
+  flyTo: {
+  bearing: 0,
+  // These options control the flight curve, making it move
+  // slowly and zoom out almost completely before starting
+  // to pan.
+  speed: 0.2, // make the flying slow
+  curve: 1, // change the speed at which it zooms out
+  // This can be any easing function: it takes a number between
+  // 0 and 1 and returns another number between 0 and 1.
+  easing: function (t) {
+  return t;
+  }
+  },
+  mapboxgl: mapboxgl
+  });
+  //map.addControl(geocoder);
+
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+  //Error: no se filtran los valores internos
+/*   
+function forwardGeocoder(query) {
+  var matchingFeatures = [];
+  for (var i = 0; i < stores.features.length; i++) {
+  var feature = stores.features[i];
+  // handle queries with different capitalization than the source data by calling toLowerCase()
+  if (
+  feature.properties.title
+  .toLowerCase()
+  .search(query.toLowerCase()) !== -1
+  ) {
+  // add a tree emoji as a prefix for custom data results
+  // using carmen geojson format: https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
+  feature['nombre'] = '🌲 ' + feature.properties.title;
+  //feature['center'] = feature.geometry.coordinates;
+  //feature['place_type'] = ['park'];
+  matchingFeatures.push(feature);
+  }
+  }
+  return matchingFeatures;
+  }
+   
+  map.addControl(
+  new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  localGeocoder: forwardGeocoder,
+  zoom: 14,
+  placeholder: 'Busque EJEM. Plaza Sesamo',
+  mapboxgl: mapboxgl
+  })
+  );
+  */
+  
+/*deck*/
+
+const {MapboxLayer, HexagonLayer} = deck;
+
 // This adds the data to the map
 map.on('load', function (e) {
   // This is where your '.addLayer()' used to be, instead add only the source without styling a layer

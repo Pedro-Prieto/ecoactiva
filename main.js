@@ -21,6 +21,40 @@ var map = new mapboxgl.Map({
 
   zoom: 9
 });
+
+// Add geolocate control to the map.
+map.addControl(
+  new mapboxgl.GeolocateControl({
+  positionOptions: {
+  enableHighAccuracy: true
+  },
+  trackUserLocation: true
+  })
+  );
+
+
+/*geocoder*/
+var geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  placeholder: 'Busqueda general',
+  flyTo: {
+  bearing: 0,
+  // These options control the flight curve, making it move
+  // slowly and zoom out almost completely before starting
+  // to pan.
+  speed: 0.2, // make the flying slow
+  curve: 1, // change the speed at which it zooms out
+  // This can be any easing function: it takes a number between
+  // 0 and 1 and returns another number between 0 and 1.
+  easing: function (t) {
+  return t;
+  }
+  },
+  mapboxgl: mapboxgl
+  });
+  //map.addControl(geocoder);
+
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 /*deck*/
 
 const {MapboxLayer, HexagonLayer} = deck;
@@ -561,3 +595,8 @@ function buildLocationList(data) {
 }
 
 /*deck*/
+
+
+/*turf*/
+
+

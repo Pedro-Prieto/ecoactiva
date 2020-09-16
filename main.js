@@ -8,7 +8,9 @@ var stores = {
       "type": "Point",
       "coordinates": [
         -78.8165212, -2.75175
-      ]
+      ],
+      
+
     },
     "properties": {
       "nombre": "Río Bibilcay", //
@@ -406,6 +408,7 @@ map.addControl(
 
 
 /*geocoder*/
+/** */
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   placeholder: 'Busqueda general',
@@ -427,6 +430,8 @@ var geocoder = new MapboxGeocoder({
   //map.addControl(geocoder);
 
   document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+/** */
+
 
   //Error: no se filtran los valores internos
 /*   
@@ -596,6 +601,10 @@ function createPopUp(currentFeature) {
 
 
 function buildLocationList(data) {
+  //crear ul <ul id="myUL">
+  //var listing = listings.appendChild(document.createElement('ul'));
+  //listing.className = 'myUL';
+//fin ul
   for (i = 0; i < data.features.length; i++) {
     var currentFeature = data.features[i];
     var prop = currentFeature.properties;
@@ -648,3 +657,33 @@ function buildLocationList(data) {
 /*turf*/
 
 
+function forwardGeocoder(query) {
+var matchingFeatures = [];
+for (var i = 0; i < customData.features.length; i++) {
+var feature = customData.features[i];
+// handle queries with different capitalization than the source data by calling toLowerCase()
+if (
+feature.properties.title
+.toLowerCase()
+.search(query.toLowerCase()) !== -1
+) {
+// add a tree emoji as a prefix for custom data results
+// using carmen geojson format: https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
+feature['place_name'] = '🌲 ' + feature.properties.title;
+feature['center'] = feature.geometry.coordinates;
+feature['place_type'] = ['park'];
+matchingFeatures.push(feature);
+}
+}
+return matchingFeatures;
+}
+ 
+map.addControl(
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+localGeocoder: forwardGeocoder,
+zoom: 14,
+placeholder: 'Enter search e.g. Lincoln Park',
+mapboxgl: mapboxgl
+})
+);

@@ -1,11 +1,11 @@
 // This will let you use the .remove() function later on
-/*if (!('remove' in Element.prototype)) {
+if (!('remove' in Element.prototype)) {
   Element.prototype.remove = function() {
     if (this.parentNode) {
       this.parentNode.removeChild(this);
     }
   };
-}*/
+}
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicHByaWV0byIsImEiOiJja2RxNTVpYXkyOHV4MnJvZnJrMTQ0dW9lIn0.TBhCyxgV9qJFaSGcPVZ6hQ';
 
@@ -408,7 +408,7 @@ var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   placeholder: 'Busqueda general',
   flyTo: {
-  bearing: 0,
+  bearing: 15,
   // These options control the flight curve, making it move
   // slowly and zoom out almost completely before starting
   // to pan.
@@ -423,7 +423,7 @@ var geocoder = new MapboxGeocoder({
   mapboxgl: mapboxgl
   });
   //map.addControl(geocoder);
-
+  
   document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 /** /
 

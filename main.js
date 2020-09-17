@@ -1,11 +1,11 @@
 // This will let you use the .remove() function later on
-if (!('remove' in Element.prototype)) {
+/*if (!('remove' in Element.prototype)) {
   Element.prototype.remove = function() {
     if (this.parentNode) {
       this.parentNode.removeChild(this);
     }
   };
-}
+}*/
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicHByaWV0byIsImEiOiJja2RxNTVpYXkyOHV4MnJvZnJrMTQ0dW9lIn0.TBhCyxgV9qJFaSGcPVZ6hQ';
 
@@ -403,7 +403,7 @@ var stores = {
 //fin datos
 
 /*geocoder*/
-/** /
+/* */
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   placeholder: 'Busqueda general',
@@ -425,7 +425,7 @@ var geocoder = new MapboxGeocoder({
   //map.addControl(geocoder);
 
   document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-/** */
+/** /
 
 
   //Error: no se filtran los valores internos
@@ -442,7 +442,7 @@ function forwardGeocoder(query) {
   // using carmen geojson format: https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
   feature['place_name'] = '🌲 ' + feature.properties.nombre;
   feature['center'] = feature.geometry.coordinates;
-  feature['place_type'] = ['park'];
+  feature['place_type'] = ['iglesia'];
   matchingFeatures.push(feature);
   }
   }
@@ -457,7 +457,7 @@ function forwardGeocoder(query) {
     placeholder: 'Enter search e.g. Lincoln Park',
     mapboxgl: mapboxgl
     })
-    );
+);
     
   /**/
 

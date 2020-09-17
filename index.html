@@ -10,11 +10,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />  
     <link href='main.css' rel='stylesheet' />
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-    <link
-    rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
-    type="text/css"
-    />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css"/>
     <!--deck-->
     <script src="https://unpkg.com/deck.gl@^6.2.0/deckgl.min.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -42,7 +38,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.html" class="nav-link">Logo</a></li>
             <!--li class="nav-item active"><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar.."></li-->
-            <li id="geocoder" class="geocoder"></li>
+            <!--li id="geocoder" class="geocoder"></li-->
             <li class="overlay">
               <button id="replay">Tráfico</button>
             </li>
@@ -66,17 +62,17 @@
 <!--inicio codigo control adicional-->
   <div id="control-panel" class="infoadicional">
     <div>
-      <label>Densidad comercial</label>
+      <label>Densidad</label>
       <input id="barras" type="checkbox"></input>
     </div>
-    <div>
+    <!--div>
       <label>Tráfico</label>
       <input id="d3_contornos" type="checkbox"></input>
     </div>
     <div>
       <label>Buscar</label>
       <input id="buscar_efecto" type="search"></input>
-    </div>
+    </div-->
   </div>
 <!--fin-->
 

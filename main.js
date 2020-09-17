@@ -1,6 +1,6 @@
 //inicio datos
 var stores = {
-  "type": "FeatureCollection",
+//  "type": "FeatureCollection",
   "features": [
 
     { "type": "Feature",
@@ -334,6 +334,23 @@ var stores = {
     { "type": "Feature", "properties": { "nombre": "Iglesia Cruz Blanca", "tipo": "IGLESIA" }, "geometry": { "type": "Point", "coordinates":  [ -78.8285229, -2.7507139 ] } },
     { "type": "Feature", "properties": { "nombre": "Casa Comunal de Pucagua", "tipo": "CASA COMUNAL" }, "geometry": { "type": "Point", "coordinates":  [ -78.8114312, -2.7434013 ] } },
 
+    {
+      'type': 'Feature',
+      'properties': {
+      'title': 'Lincoln Park',
+      'description':
+      'A northside park that is home to the Lincoln Park Zoo'
+      },
+      'geometry': {
+      'coordinates': [-87.637596, 41.940403],
+      'type': 'Point'
+      }
+      },
+
+      
+  ],
+  'type': 'FeatureCollection'
+  };
 
 
     /*{
@@ -356,8 +373,6 @@ var stores = {
         "provincia": "Cañar"
       }
     }*/
-  ]
-  };
 //fin datos
 
 
@@ -408,7 +423,7 @@ map.addControl(
 
 
 /*geocoder*/
-/** */
+/** /
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   placeholder: 'Busqueda general',
@@ -434,7 +449,7 @@ var geocoder = new MapboxGeocoder({
 
 
   //Error: no se filtran los valores internos
-/*   
+//   
 function forwardGeocoder(query) {
   var matchingFeatures = [];
   for (var i = 0; i < stores.features.length; i++) {
@@ -447,9 +462,9 @@ function forwardGeocoder(query) {
   ) {
   // add a tree emoji as a prefix for custom data results
   // using carmen geojson format: https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
-  feature['nombre'] = '🌲 ' + feature.properties.title;
-  //feature['center'] = feature.geometry.coordinates;
-  //feature['place_type'] = ['park'];
+  feature['name'] = '🌲 ' + feature.properties.title;
+  feature['center'] = feature.geometry.coordinates;
+  feature['place_type'] = ['park'];
   matchingFeatures.push(feature);
   }
   }
@@ -465,7 +480,7 @@ function forwardGeocoder(query) {
   mapboxgl: mapboxgl
   })
   );
-  */
+  /*/
   
 /*deck*/
 
@@ -657,8 +672,8 @@ function buildLocationList(data) {
 
 function forwardGeocoder(query) {
 var matchingFeatures = [];
-for (var i = 0; i < customData.features.length; i++) {
-var feature = customData.features[i];
+for (var i = 0; i < store.features.length; i++) {
+var feature = store.features[i];
 // handle queries with different capitalization than the source data by calling toLowerCase()
 if (
 feature.properties.title
